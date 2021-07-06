@@ -1,6 +1,16 @@
-// Create a new component
-// This component should produce some HTML
-const App = function() {
-    return <div>Hi!</div>;
+import React from 'react';
+import ReactDOM from 'react-dom';
+require('dotenv').config();
+import Searchbar from './components/searchbar';
+
+const youtubeAPI = process.env.YOUTUBE_API_KEY;
+
+const App = () => {
+    return (
+        <div>
+            <Searchbar />
+        </div>
+    );
 }
-// Take this component's generated HTML and insert it into the DOM
+
+ReactDOM.render(<App />, document.querySelector('.container'));
