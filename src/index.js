@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-require('dotenv').config();
+import YTSearch from 'youtube-api-search';
 import Searchbar from './components/searchbar';
+require('dotenv').config;
 
 const youtubeAPI = process.env.YOUTUBE_API_KEY;
+
+YTSearch({key: youtubeAPI, term: 'surfboards'}, (data) => {
+    console.log(data);
+});
 
 const App = () => {
     return (
